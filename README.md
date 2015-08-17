@@ -1,7 +1,7 @@
 # beach_volley
 
-Usage
-
+## Usage
+```java
 BeachVolleyRequest employeeRequest = new BeachVolleyRequest(url, Employee.class, new BeachVolleyResponseHandler<Employee>(){
 
             @Override
@@ -11,3 +11,4 @@ BeachVolleyRequest employeeRequest = new BeachVolleyRequest(url, Employee.class,
 
         }) ;
         employeeRequest.run(this);
+```
