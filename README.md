@@ -2,7 +2,8 @@
 
 ## Usage
 ```java
-BeachVolleyRequest employeeRequest = new BeachVolleyRequest(url, Employee.class, new BeachVolleyResponseHandler<Employee>(){
+BeachVolleyRequest employeeRequest = new BeachVolleyRequest(url, Employee.class, 
+new BeachVolleyResponseHandler<Employee>(){
 
             @Override
             public void success(Employee response) {
