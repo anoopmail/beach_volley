@@ -10,6 +10,6 @@ new BeachVolleyResponseHandler<Employee>(){
                 Log.i("BeachVolley", employee.name);
             }
 
-        }) ;
-        employeeRequest.run(this);
+        }).run(context) ;
+        
 ```
