@@ -50,9 +50,6 @@ public class BeachVolleyRequest<T> extends JsonRequest<T>{
         this.clazz          = clazz ;
     }
 
-    public BeachVolleyRequest(String url, String requestBody, Class<T> clazz, final BeachVolleyResponseHandler callback) {
-        this(Method.GET, url, requestBody, clazz, callback ) ;
-    }
 
     public BeachVolleyRequest(String url, Class<T> clazz, final BeachVolleyResponseHandler callback) {
         this(Method.GET, url, "", clazz, callback ) ;
