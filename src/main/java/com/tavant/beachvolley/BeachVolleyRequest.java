@@ -55,21 +55,9 @@ public class BeachVolleyRequest<T> extends JsonRequest<T>{
     }
 
 
-    /*public BeachVolleyRequest(String url, String requestBody, Class<T> clazz, final BeachVolleyResponseHandler callback) {
-        this(Method.GET, url, requestBody, clazz, callback ) ;
-    }*/
-
-    /*public BeachVolleyRequest(String url, Class<T> clazz, final BeachVolleyResponseHandler callback) {
+    public BeachVolleyRequest(String url, Class<T> clazz, final BeachVolleyResponseHandler callback) {
         this(Method.GET, url, "", clazz, callback ) ;
-    }*/
-
-    /*public BeachVolleyRequest(int method, String url, Object requestObject, Class<T> clazz, final BeachVolleyResponseHandler callback) {
-        this(method, url, new Gson().toJson(requestObject), clazz, callback ) ;
     }
-*//*public BeachVolleyRequest(int method, String url, Object requestObject, Class<T> clazz, final BeachVolleyResponseHandler callback) {
-        this(method, url, new Gson().toJson(requestObject), clazz, callback ) ;
-    }
-*/
 
 
     @Override
@@ -84,14 +72,8 @@ public class BeachVolleyRequest<T> extends JsonRequest<T>{
         }
         }
 
-
-
     public void run(Context context){
         BeachVolley.newRequestQueue(context).add(this);
-    }
-
-    public class Method implements Request.Method{
-
     }
 }
 
