@@ -3,8 +3,10 @@ package com.tavant.beachvolley;
 
 import android.content.Context;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
+import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.HttpHeaderParser;
@@ -13,10 +15,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
- * Created by anoop.m on 24 Jul.
+ * Created by anoop.m on 22 Jul.
  */
 
 public class BeachVolleyRequest<T> extends JsonRequest<T>{
@@ -50,13 +54,22 @@ public class BeachVolleyRequest<T> extends JsonRequest<T>{
         this.clazz          = clazz ;
     }
 
-    public BeachVolleyRequest(String url, String requestBody, Class<T> clazz, final BeachVolleyResponseHandler callback) {
-        this(Method.GET, url, requestBody, clazz, callback ) ;
-    }
 
-    public BeachVolleyRequest(String url, Class<T> clazz, final BeachVolleyResponseHandler callback) {
+    /*public BeachVolleyRequest(String url, String requestBody, Class<T> clazz, final BeachVolleyResponseHandler callback) {
+        this(Method.GET, url, requestBody, clazz, callback ) ;
+    }*/
+
+    /*public BeachVolleyRequest(String url, Class<T> clazz, final BeachVolleyResponseHandler callback) {
         this(Method.GET, url, "", clazz, callback ) ;
+    }*/
+
+    /*public BeachVolleyRequest(int method, String url, Object requestObject, Class<T> clazz, final BeachVolleyResponseHandler callback) {
+        this(method, url, new Gson().toJson(requestObject), clazz, callback ) ;
     }
+*//*public BeachVolleyRequest(int method, String url, Object requestObject, Class<T> clazz, final BeachVolleyResponseHandler callback) {
+        this(method, url, new Gson().toJson(requestObject), clazz, callback ) ;
+    }
+*/
 
 
     @Override
@@ -71,8 +84,14 @@ public class BeachVolleyRequest<T> extends JsonRequest<T>{
         }
         }
 
+
+
     public void run(Context context){
         BeachVolley.newRequestQueue(context).add(this);
+    }
+
+    public class Method implements Request.Method{
+
     }
 }
 
